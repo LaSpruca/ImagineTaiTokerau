@@ -1,13 +1,96 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 header {
+  padding: 30px;
   .logo {
-    height: 100px;
+    width: 257px;
+    margin: auto;
+    img {
+      height: 100px;
+    }
+  }
+}
+
+.nav-btn-wrapper {
+  visibility: hidden;
+  width: 30px;
+  margin: auto;
+  button {
+    background: none;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.nav-wrapper {
+  padding: 10px;  
+}
+
+.nav {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  justify-content: center;
+  font-size: 10pt;
+}
+
+.nav-link {
+  text-align: center;
+  font-size: 13pt;
+  color: #30cbe2;
+  transition: color 200ms, font-weight 200ms;
+
+  &:hover {
+    color: #154a81;
+  }
+  
+  &.active {
+    font-weight: bold;
   }
 }
 
 .content {
   background-color: grey;
+}
+
+@media only screen and (max-width: 670px) {
+  header {
+    padding: 0;
+  }
+  
+  .logo {
+    padding-top: 30px;
+  }
+  
+  .nav-wrapper {
+    margin-bottom: 30px;
+    background-color: lightgrey;
+    .nav-btn-wrapper {
+      visibility: visible;
+    }
+    
+    .nav {
+      flex-direction: column;
+    }
+    
+    &.hidden {
+      background-color: transparent;
+      .nav {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        * {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  background-color: transparent;
 }
 
 #blazor-error-ui {
