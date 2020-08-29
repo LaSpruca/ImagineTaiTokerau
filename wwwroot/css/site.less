@@ -43,7 +43,7 @@ header {
   text-align: center;
   font-size: 13pt;
   color: @primary;
-  transition: color 200ms, font-weight 200ms;
+  transition: font-weight ease 200ms, color ease 200ms;
 
   &:hover {
     color: @secondary;
@@ -81,11 +81,15 @@ header {
     &.hidden {
       background-color: transparent;
       .nav {
+        padding: 0;
+        margin: 0;
+        justify-content: left;
         visibility: hidden;
         height: 0;
         width: 0;
-        * {
+        a {
           width: 0;
+          margin: 0;
         }
       }
     }
@@ -97,18 +101,24 @@ header {
   text-align: center;
 }
 
+p {
+  font-size: 15pt;
+}
+
 .top-bit {
   position: relative;
   padding: 10px;
+  -webkit-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+  margin-bottom: 30px;
   
   &:before {
-    background-image: url("../image/cape.jpg");
+    background-image: url("../image/cape_bw.jpg");
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background-position: 0 70%;
-    filter: blur(5px);
   }
   
   .inner {
@@ -133,6 +143,8 @@ header {
   }
   
   p {
+    margin: auto;
+    width: 50%;
     color: #333333;
     font-size: 15pt;
   }
@@ -145,7 +157,8 @@ header {
     font-size: 15pt;
     padding: 10px;
     font-weight: bold;
-    transition: background-color 200ms, color 200ms;
+    transition: ease 200ms;
+    margin: 40px;
     
     &:hover {
       background-color: @primary;
@@ -155,10 +168,57 @@ header {
   }
 }
 
+.home {
+  .cards {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  @media only screen and (max-width: 950px) {
+    .cards {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  @media only screen and (max-width: 510px) {
+    .cards {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+    }
+  }
+}
+
+.card-nobg {
+  padding: 20px;
+  img {
+    width: 100px;
+    margin: auto;
+  }
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+    font-size: 15px;
+  }
+}
+
+.blue-text {
+  color: @secondary;
+}
+
+.home {
+  .blue-text {
+    width: 60%;
+    margin: auto;
+  }
+}
+
 #blazor-error-ui {
   background: lightyellow;
   bottom: 0;
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: none;
   left: 0;
   padding: 0.6rem 1.25rem 0.7rem 1.25rem;
