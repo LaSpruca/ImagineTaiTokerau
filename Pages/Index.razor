@@ -1,5 +1,42 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManager
 
-<h1>Hello, world!</h1>
+<div class="home">
+    <div class="top-bit">
+        <div class="inner">
+            <h1>
+                25<sup>th</sup> - 27<sup>th</sup> September 2020
+            </h1>
+            
+            <h3>
+                Mā pango mā whero ka oti te mahi.
+            </h3>
+            
+            <h2>
+                CREATE THE COMMUNITY YOU WANT TO LIVE IN!
+            </h2>
+            
+            <p>
+                Tai Tokerau faces a series of challenges and we believe that YOU have the solutions. 
+                <br />
+                <br />
+                This weekend-long event is for everyone who is committed to make Northland an even better place to live.
+                <br />Together, we will brainstorm workable solutions to the problems that you see in our community and support the best ideas to become a reality.
+                <br />
+                <br />
+                Sir Paul Callaghan said that “Tai Tokerau is the place where talent wants to live” – let’s harness that talent!
+            </p>
+            
+            <button @onclick="GoToAbout">Tell me more!</button>
+        </div>
+    </div>
+</div>
 
-Welcome to your new app.
+
+@code {
+
+    void GoToAbout() {
+        NavigationManager.NavigateTo("/about");
+    }
+
+}
