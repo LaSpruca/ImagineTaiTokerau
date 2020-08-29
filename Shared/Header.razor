@@ -1,0 +1,53 @@
+<div class="logo">
+    <img src="image/logo.png" alt="Imagine Tai Tokerau Logo">
+</div>
+
+<div class="nav-wrapper @GetClasses()">
+    
+    <div class="nav-btn-wrapper">
+        <button @onclick="ToggleMenuVisability"><span class="oi oi-menu"></span></button>
+    </div>
+    
+    <div class="nav">
+        <NavLink href="/" Match="NavLinkMatch.All" class="nav-link">
+                <span class="oi oi-home"></span> Home
+            </NavLink>
+        
+            <NavLink href="/about" class="nav-link">
+                <span class="oi oi-question-mark"></span> About
+            </NavLink>
+        
+            <NavLink href="/ideas" class="nav-link">
+                <span class="oi oi-cloud"></span> Ideas
+            </NavLink>
+        
+            <NavLink href="/participants" class="nav-link">
+                <span class="oi oi-people"></span> Participants
+            </NavLink>
+        
+            <NavLink href="/mentors" class="nav-link">
+                <span class="oi oi-book"></span> Mentors
+            </NavLink>
+        
+            <NavLink href="/register" class="nav-link">
+                <span class="oi oi-pencil"></span> Registor
+            </NavLink>
+        
+            <NavLink href="/contact" class="nav-link">
+                <span class="oi oi-pencil"></span> Contact
+            </NavLink>
+    </div>
+</div>
+
+@code {
+    bool _burgerVisable = false;
+
+    string GetClasses() {
+        return _burgerVisable ?
+        "" : "visable";
+    }
+
+    void ToggleMenuVisability() {
+        _burgerVisable = !_burgerVisable;
+    }
+}
