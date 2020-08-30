@@ -42,7 +42,7 @@ header {
 
 .nav-link {
   text-align: center;
-  font-size: 13pt;
+  font-size: 15pt;
   color: @primary;
   transition: font-weight ease 200ms, color ease 200ms;
 
@@ -59,7 +59,7 @@ header {
   background-color: grey;
 }
 
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 750px) {
   header {
     padding: 0;
   }
@@ -183,6 +183,10 @@ p {
     p {
       padding: 10px 0 40px 0;
     }
+    
+    h2 {
+      padding-top: 50px;
+    }
   }
 
   .cards-schedule {
@@ -207,6 +211,9 @@ p {
     }
     
     @media only screen and (max-width: 510px) {
+      .schedule {
+        padding: 10px;
+      }
       .cards {
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto;
@@ -235,6 +242,10 @@ p {
     border-radius: 100%;
   }
   
+  h3 {
+    font-weight: bolder;
+  }
+  
   p {
     font-size: 15pt;
     padding: 20px;
@@ -254,6 +265,48 @@ p {
   p {
     text-align: justify;
     font-size: 15pt;
+  }
+}
+
+.register {
+  background-image: url("../image/register.jpg");
+  background-size: cover;
+  background-color: @primaryDark;
+  background-blend-mode: screen;
+  margin-top: 100px;
+  padding: 70px;
+  
+  h3 {
+    font-weight: 900;
+    padding: 60px;
+  }
+  
+  h1 {
+    padding: 30px;
+    font-weight: 900;
+    font-size: 50pt;
+  }
+  
+  button {
+    background: white;
+    border: none;
+    color: @secondary;
+    border-radius: 3px;
+    font-size: 20pt;
+    padding: 10px;
+    font-weight: bold;
+    transition: ease 200ms;
+    margin: 40px;
+
+    &:hover {
+      background-color: @primary;
+      color: white;
+      box-shadow: black 1px 1px 5px;
+    }
+    
+    &:focus {
+      outline: none;
+    }
   }
 }
 

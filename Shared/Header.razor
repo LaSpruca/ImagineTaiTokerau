@@ -42,10 +42,8 @@
 @code {
     bool _burgerVisable = false;
 
-    string GetClasses() {
-        return _burgerVisable ?
-        "" : "hidden";
-    }
+    string GetClasses() => _burgerVisable ? "" : "hidden";
+    
 
     void ToggleMenuVisability() {
         _burgerVisable = !_burgerVisable;

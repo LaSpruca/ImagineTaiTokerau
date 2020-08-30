@@ -75,6 +75,37 @@
                 Whether it’s your idea or someone else’s, you’ll create a cross-functional team to work with over the weekend.
             </Card>
         </div>
+        
+        <h2>Saturday, Day 2: Learn & Work</h2>
+        <div class="cards-schedule">
+            <Card ImageLocation="../image/get_support.jpg" Title="Get Support">
+                Local mentors will be coming in throughout the event to coach you through the challenges and provide support.
+            </Card>
+            <Card ImageLocation="../image/story.jpg" Title="Get To Work">
+                We’ve got the resources and support in place to make things happen in a short period of time. 
+                You’ll test your idea, refine it and create a working solution to your challenge.
+            </Card>
+        </div>
+        
+        <h2>Sunday, Day 3: Present & Choose</h2>
+        <div class="cards-schedule">
+            <Card ImageLocation="../image/present.jpg" Title="Present in Front of Local Judges">
+                You’ll have 5 minutes to present your solution to the crowd and a panel of experts.
+                The chosen ideas will receive ongoing support.
+            </Card>
+            <Card ImageLocation="../image/colab.jpg" Title="Celebrate & Network">
+                Celebrate all the work you’ve done and decide where to go from here.
+                Get the opportunity to talk to judges and mingle with mentors.
+            </Card>
+        </div>
+    </div>
+    
+    <div class="register">
+        <h3>That all sound great?</h3>
+        
+        <h1>Join us and get creative!</h1>
+        
+        <button @onclick="GoToRegister">Register</button>
     </div>
 </div>
 
@@ -83,6 +114,11 @@
 
     void GoToAbout() {
         NavigationManager.NavigateTo("/about");
+    }
+
+
+    void GoToRegister() {
+        NavigationManager.NavigateTo("/register");
     }
 
 }
