@@ -203,28 +203,30 @@ p {
     width: 60%;
     margin: auto;
   }
+}
 
-  @media only screen and (max-width: 980px) {
-    .cards {
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-    }
-    
-    @media only screen and (max-width: 510px) {
-      .schedule {
-        padding: 10px;
-      }
-      .cards {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
-      }
+@media only screen and (max-width: 980px) {
+  .home .cards {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  
+  .home .cards-schedule {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .home .schedule {
+    padding: 0px;
+    .card-bg {
+      margin: 5px;
     }
   }
   
-  @media only screen and (max-width: 970px) {
-    .cards-schedule {
-      grid-template-columns: auto;
-    }
+  .home .cards {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
   }
 }
 
