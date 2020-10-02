@@ -1,10 +1,28 @@
 import React, {Component} from 'react';
-import logo from '../assets/image/logo.png'
+import { Link } from 'react-router-dom'
+import logo from '../assets/image/logo.png';
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {showNav: false};
+        let currentPage = "";
+
+        if (window.location.pathname === "/") {
+            currentPage = "home";
+            console.log("home");
+        } else {
+            currentPage = window.location.pathname.split("/")[1];
+        }
+
+        console.log(currentPage);
+
+        this.state = {
+            currentPage,
+            showNav: false
+        };
+
+
+        document.title = "Imagine Tai Tokerau " + currentPage.split("-").map((a) => a[0].toUpperCase() + a.slice(1)).join(" ");
 
         this.toggleNavButton = this.toggleNavButton.bind(this);
     }
@@ -29,33 +47,33 @@ class Header extends Component {
                 </div>
 
                 <div className="nav">
-                    <a href="/" className="nav-link">
+                    <Link to="/" className={"nav-link " + (this.state.currentPage === "home" ? "active" : "")}>
                         <span className="oi oi-home"/> Home
-                    </a>
+                    </Link>
 
-                    <a href="/about" className="nav-link">
+                    <Link to="/about" className={"nav-link " + (this.state.currentPage === "about" ? "active" : "")}>
                         <span className="oi oi-question-mark"/> About
-                    </a>
+                    </Link>
 
-                    <a href="/ideas" className="nav-link">
+                    <Link to="/ideas" className={"nav-link " + (this.state.currentPage === "ideas" ? "active" : "")}>
                         <span className="oi oi-cloud"/> Ideas
-                    </a>
+                    </Link>
 
-                    <a href="/experts" className="nav-link">
+                    <Link to="/experts" className={"nav-link " + (this.state.currentPage === "experts" ? "active" : "")}>
                         <span className="oi oi-book"/> Experts
-                    </a>
+                    </Link>
 
-                    <a href="/participants" className="nav-link">
+                    <Link to="/participants" className={"nav-link " + (this.state.currentPage === "participants" ? "active" : "")}>
                         <span className="oi oi-people"/> Participants
-                    </a>
+                    </Link>
 
-                    <a href="/register" className="nav-link">
+                    <Link to="/register" className={"nav-link " + (this.state.currentPage === "register" ? "active" : "")}>
                         <span className="oi oi-pencil"/> Registor
-                    </a>
+                    </Link>
 
-                    <a href="/contact" className="nav-link">
+                    <Link to="/contact" className={"nav-link " + (this.state.currentPage === "contact" ? "active" : "")}>
                         <span className="oi oi-envelope-open"/> Contact
-                    </a>
+                    </Link>
                 </div>
             </div>
             </header>
