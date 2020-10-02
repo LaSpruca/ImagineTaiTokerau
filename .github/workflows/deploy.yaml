@@ -23,9 +23,6 @@ jobs:
       - name: update browserslist
         run: |
           npx browserslist --update-db
-      - name: yarn install
-        run: |
-          yarn install
       - name: yarn build
         run: |
           yarn build
