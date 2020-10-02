@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
-import logo from '../assets/image/logo.png';
+import logo from '../assets/image/logo.svg';
 
 class Header extends Component {
     constructor(props) {

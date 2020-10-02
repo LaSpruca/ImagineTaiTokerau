@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css"
 import Home from "./pages/Home.jsx";
 import About from "./pages/About";
 import Ideas from "./pages/Ideas";
