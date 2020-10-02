@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - name: update browserslist
+        run: |
+          npx browserslist --update-db
       - name: yarn install
         run: |
           yarn install
