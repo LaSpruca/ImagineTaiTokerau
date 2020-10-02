@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import Contact from "./pages/Contact";
 
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Footer from "./components/Footer";
 
 class App extends Component {
     render() {
@@ -24,6 +25,7 @@ class App extends Component {
                     <Route exact path="/experts" component={Experts}/>
                     <Route exact path="/participants" component={Participants}/>
                 </Switch>
+                <Footer />
             </Router>
         );
     }

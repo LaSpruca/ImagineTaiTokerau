@@ -43,15 +43,15 @@ header {
 .nav-link {
   text-align: center;
   font-size: 15pt;
-  color: @primary;
+  color: @secondary;
   transition: ease 200ms;
 
   &:hover {
-    color: @secondary;
+    color: @primary;
   }
 
   &.active {
-    font-weight: bold;
+    font-weight: 900;
   }
 }
 
@@ -145,9 +145,9 @@ p {
 
   p {
     margin: auto;
-    width: 50%;
+    width: 60%;
     color: #333333;
-    font-size: 15pt;
+    font-size: 20pt;
   }
 
   button {
@@ -315,4 +315,30 @@ p {
 .blue-text {
   font-size: 20pt;
   color: @primaryDark;
+}
+
+.in-collaboration-with {
+  padding: 10rem;
+
+  img {
+    padding: 20px;
+    height: 150px;
+  }
+
+  h6 {
+    padding: 30px;
+    font-size: 30px;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: #453F3F;
+  background: @primaryDark;
+
+  a {
+    color: #453F3F;
+    text-decoration: none;
+  }
 }

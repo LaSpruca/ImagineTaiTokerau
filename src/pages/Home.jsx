@@ -15,21 +15,22 @@ import team from '../assets/image/team.jpg';
 import get_support from '../assets/image/get_support.jpg';
 import present from '../assets/image/present.jpg';
 import colab from '../assets/image/colab.jpg';
+import tpk from '../assets/image/te_puni_kokiri.png';
+import ngen from '../assets/image/ngen_room.png';
+import nic from '../assets/image/nic_logo.jpg';
+import dev_inst from '../assets/image/dev_inst.png';
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.gotoAbout = this.gotoAbout.bind(this);
-        this.gotoRegister = this.gotoRegister.bind(this);
+        this.goto = this.goto.bind(this);
     }
 
-    gotoAbout() {
-
-    }
-
-    gotoRegister() {
-
+    goto(path) {
+        return () => {
+            window.location.href = "/" + path
+        };
     }
 
     render() {
@@ -66,7 +67,7 @@ class Home extends Component {
                                     Sir Paul Callaghan said that “Tai Tokerau is the place where talent wants to live” –
                                     let’s harness that talent!
                                 </p>
-                                <button onClick={this.gotoAbout()}>Tell me more!</button>
+                                <button onClick={this.goto("about")}>Tell me more!</button>
                             </div>
                         </div>
 
@@ -160,7 +161,14 @@ class Home extends Component {
 
                             <h1>Join us and get creative!</h1>
 
-                            <button onClick={this.gotoRegister()}>Register</button>
+                            <button onClick={this.goto("register")}>Register</button>
+                        </div>
+                        <div className="in-collaboration-with">
+                            <h6>In collaboration with</h6>
+                            <a href="https://www.tpk.govt.nz/en"><img src={tpk} alt=""/></a>
+                            <a href="https://www.ngenroom.co.nz"><img src={ngen} alt="" /></a>
+                            <a href="https://n-ic.nz"><img src={nic} alt=""/></a>
+                            <a href="https://www.developers.ac.nz/"><img src={dev_inst} alt=""/></a>
                         </div>
                     </div>
                 </div>

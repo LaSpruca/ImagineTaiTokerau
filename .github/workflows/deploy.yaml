@@ -1,3 +1,5 @@
+name: Build and Deploy site
+
 on:
   push:
     branches:
