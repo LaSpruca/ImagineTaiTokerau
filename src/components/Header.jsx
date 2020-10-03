@@ -22,9 +22,10 @@ class Header extends Component {
             currentPage,
             showNav: false
         };
-
-
-        document.title = "Imagine Tai Tokerau " + currentPage.split("-").map((a) => a[0].toUpperCase() + a.slice(1)).join(" ");
+        
+        document.title = props.error === "true"
+            ? "Imagine Tai Tokerau | 404"
+            : "Imagine Tai Tokerau | " + currentPage.split("-").map((a) => a[0].toUpperCase() + a.slice(1)).join(" ");
 
         this.toggleNavButton = this.toggleNavButton.bind(this);
     }
