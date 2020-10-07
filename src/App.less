@@ -10,18 +10,18 @@
 header {
   padding: 30px;
   .logo {
-    width: 257px;
+    width: 483px;
     margin: auto;
     img {
-      height: 100px;
+      height: 150px;
     }
   }
 }
 
 .nav-btn-wrapper {
   visibility: hidden;
-  width: 30px;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto 0 0;
   button {
     background: none;
     border: none;
@@ -47,7 +47,7 @@ header {
   text-align: center;
   font-size: 15pt;
   color: @secondary;
-  transition: ease 200ms;
+  transition: ease 200ms, visibility 0ms;
 
   &:hover {
     color: @primary;
@@ -78,10 +78,13 @@ header {
 @media only screen and (max-width: 750px) {
   header {
     padding: 0;
-  }
-
-  .logo {
-    padding-top: 30px;
+    .logo {
+      width: 322px;
+      padding-top: 30px;
+      img {
+        height: 100px;
+      }
+    }
   }
 
   .nav-wrapper {
@@ -109,6 +112,15 @@ header {
           margin: 0;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  header .logo {
+    width: 161px;
+    img {
+      height: 50px;
     }
   }
 }
@@ -234,7 +246,7 @@ p {
 
 @media only screen and (max-width: 510px) {
   .home .schedule {
-    padding: 0px;
+    padding: 0;
     .card-bg {
       margin: 5px;
     }
@@ -285,7 +297,7 @@ p {
 .card-nobg {
   padding: 30px;
   img {
-    padding: 5px;
+    padding: 10px;
     width: 150px;
     margin: auto;
   }

@@ -1,19 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Header from "../components/Header";
 
-class Contact extends Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <div className="content">
-                    <div className="contact">
-                        <h3>Contact</h3>
-                    </div>
-                </div>
+export const Contact = (props) => (
+    <div>
+        <Header/>
+        <div className="content">
+            <div className="contact">
+                <h3>Contact</h3>
             </div>
-        )
-    }
-}
-
-export default Contact;
+        </div>
+    </div>
+);

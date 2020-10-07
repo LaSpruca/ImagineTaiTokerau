@@ -1,106 +1,146 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom'
-import logo from '../assets/image/logo.svg';
-import twitter_logo from '../assets/image/twitter.svg';
-import fb_logo from '../assets/image/fb.svg';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/image/logo.png";
+import twitter_logo from "../assets/image/twitter.svg";
+import fb_logo from "../assets/image/fb.svg";
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        let currentPage = "";
+  constructor(props) {
+    super(props);
+    let currentPage = "";
 
-        if (window.location.pathname === "/") {
-            currentPage = "home";
-            console.log("home");
-        } else {
-            currentPage = window.location.pathname.split("/")[1];
-        }
-
-        console.log(currentPage);
-
-        this.state = {
-            currentPage,
-            showNav: false
-        };
-
-
-        document.title = "Imagine Tai Tokerau " + currentPage.split("-").map((a) => a[0].toUpperCase() + a.slice(1)).join(" ");
-
-        this.toggleNavButton = this.toggleNavButton.bind(this);
+    if (window.location.pathname === "/") {
+      currentPage = "home";
+      console.log("home");
+    } else {
+      currentPage = window.location.pathname.split("/")[1];
     }
 
-    toggleNavButton() {
-        this.setState((state) => {
-            return {showNav: !state.showNav}
-        })
-    }
+    console.log(currentPage);
 
-    render() {
-        return (
-            <header>
-                <div className="logo">
-                    <img src={logo} alt="Imagine Tai Tokerau Logo"/>
-                </div>
+    this.state = {
+      currentPage,
+      showNav: false,
+    };
 
-                <div className="social">
-                    <div>
-                        <a href="https://www.facebook.com/Imagine-Tai-Tokerau-224344235595585">
-                            <img src={fb_logo} alt="" className="svg-icon"/>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://twitter.com/itokerau">
-                            <img src={twitter_logo} alt="" className="svg-icon"/>
-                        </a>
-                    </div>
+    document.title =
+      "Imagine Tai Tokerau " +
+      currentPage
+        .split("-")
+        .map((a) => a[0].toUpperCase() + a.slice(1))
+        .join(" ");
 
-                </div>
+    this.toggleNavButton = this.toggleNavButton.bind(this);
+  }
 
-                <div className={"nav-wrapper " + (this.state.showNav ? "" : "hidden")}>
+  toggleNavButton() {
+    this.setState((state) => {
+      return { showNav: !state.showNav };
+    });
+  }
 
-                    <div className="nav-btn-wrapper">
-                        <button onClick={this.toggleNavButton}><span className="oi oi-menu"/></button>
-                    </div>
+  render() {
+    return (
+      <header>
+        <div className="logo">
+          <img src={logo} alt="Imagine Tai Tokerau Logo" />
+        </div>
 
-                    <div className="nav">
-                        <Link to="/" className={"nav-link " + (this.state.currentPage === "home" ? "active" : "")}>
-                            <span className="oi oi-home"/> Home
-                        </Link>
+        <div className="social">
+          <div>
+            <a href="https://www.facebook.com/Imagine-Tai-Tokerau-224344235595585">
+              <img src={fb_logo} alt="" className="svg-icon" />
+            </a>
+          </div>
+          <div>
+            <a href="https://twitter.com/itokerau">
+              <img src={twitter_logo} alt="" className="svg-icon" />
+            </a>
+          </div>
+        </div>
 
-                        <Link to="/about"
-                              className={"nav-link " + (this.state.currentPage === "about" ? "active" : "")}>
-                            <span className="oi oi-question-mark"/> About
-                        </Link>
+        <div className={"nav-wrapper " + (this.state.showNav ? "" : "hidden")}>
+          <div className="nav-btn-wrapper">
+            <button onClick={this.toggleNavButton}>
+              <span className="oi oi-menu" />
+            </button>
+          </div>
 
-                        <Link to="/ideas"
-                              className={"nav-link " + (this.state.currentPage === "ideas" ? "active" : "")}>
-                            <span className="oi oi-cloud"/> Ideas
-                        </Link>
+          <div className="nav">
+            <Link
+              to="/"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "home" ? "active" : "")
+              }
+            >
+              <span className="oi oi-home" /> Home
+            </Link>
 
-                        <Link to="/experts"
-                              className={"nav-link " + (this.state.currentPage === "experts" ? "active" : "")}>
-                            <span className="oi oi-book"/> Experts
-                        </Link>
+            <Link
+              to="/about"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "about" ? "active" : "")
+              }
+            >
+              <span className="oi oi-question-mark" /> About
+            </Link>
 
-                        <Link to="/participants"
-                              className={"nav-link " + (this.state.currentPage === "participants" ? "active" : "")}>
-                            <span className="oi oi-people"/> Participants
-                        </Link>
+            <Link
+              to="/ideas"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "ideas" ? "active" : "")
+              }
+            >
+              <span className="oi oi-cloud" /> Ideas
+            </Link>
 
-                        <Link to="/register"
-                              className={"nav-link " + (this.state.currentPage === "register" ? "active" : "")}>
-                            <span className="oi oi-pencil"/> Registor
-                        </Link>
+            <Link
+              to="/experts"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "experts" ? "active" : "")
+              }
+            >
+              <span className="oi oi-book" /> Experts
+            </Link>
 
-                        <Link to="/contact"
-                              className={"nav-link " + (this.state.currentPage === "contact" ? "active" : "")}>
-                            <span className="oi oi-envelope-open"/> Contact
-                        </Link>
-                    </div>
-                </div>
-            </header>
-        );
-    }
+            <Link
+              to="/participants"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "participants" ? "active" : "")
+              }
+            >
+              <span className="oi oi-people" /> Participants
+            </Link>
+
+            <Link
+              to="/register"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "register" ? "active" : "")
+              }
+            >
+              <span className="oi oi-pencil" /> Registor
+            </Link>
+
+            <Link
+              to="/contact"
+              className={
+                "nav-link " +
+                (this.state.currentPage === "contact" ? "active" : "")
+              }
+            >
+              <span className="oi oi-envelope-open" /> Contact
+            </Link>
+          </div>
+        </div>
+      </header>
+    );
+  }
 }
 
 export default Header;
