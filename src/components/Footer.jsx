@@ -10,4 +10,8 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export const Footer = () => (
+    <div className={"footer " + error()}>
+        <h5>&#169;ImagineTaiTokerau 2020</h5>
+    </div>
+);
