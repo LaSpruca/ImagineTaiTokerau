@@ -20,10 +20,6 @@ import ngen from "../assets/image/ngen_room.png";
 import nic from "../assets/image/nic_logo.jpg";
 import dev_inst from "../assets/image/dev_inst.png";
 
-function goto(path) {
-  return;
-}
-
 export const Home = (props) => (
   <div>
     <Header />
